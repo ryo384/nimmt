@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポートフォリオ用ソロニムト</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- ============================ -->
+<body>
+    <div class="container">
+        <header>
+            <div class="headerTop">
+                <h1>ニムト</h1>
+                <div class="headerSetting">
+                    <div><button id="startBtn" type="button">ゲームスタート</button></div>
+                    <div><button id="resetBtn"　type="button">ゲームリセット</button></div>
+                </div>
+                <div class="headerSetting">
+                    <div><button type="button" id="ruleOpen">ルールの確認</button></div>
+                </div>
+            </div>
+            <div class="messageWindow">
+                <p id="message"></p>
+                <div class="selectBtns">
+                    <button id="btnA" type="button">1列目</button>
+                    <button id="btnB" type="button">2列目</button>
+                    <button id="btnC" type="button">3列目</button>
+                    <button id="btnD" type="button">4列目</button>
+                </div>
+            </div>
+        </header>
+        <!-- ============================ -->
+        <main>
+            <!-- 自分の手札 -->
+            <div class="myHand">
+                <p>自分の手札</p>
+                <ul class="cards">
+                </ul>
+            </div>
+            <!-- フィールド -->
+            <div class="field">
+                <div id="lineBoard">
+                    <!-- 列A -->
+                    <div>
+                        <ol id="lineA">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ol>
+                    </div>
+                    <!-- 列B -->
+                    <div>
+                        <ol id="lineB">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>                            
+                        </ol>
+                    </div>
+                    <!-- 列C -->
+                    <div>
+                        <ol id="lineC">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ol>
+                    </div>
+                    <!-- 列D -->
+                    <div>
+                        <ol id="lineD">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ol>
+                    </div>
+                </div> <!-- 左側フィールド -->
+                <!-- 出されたカード -->
+                <div class="putField">
+                    <div class="player1">
+                        <div class="choiceCard"></div>
+                        <div>
+                            <div>あなた</div>
+                            <div>持ち点：<span id="player1Point">66</span></div>
+                        </div>
+                    </div>
+                    <div class="player2">
+                        <div class="choiceCard"></div>
+                        <div>
+                            <div>player2</div>
+                            <div>持ち点：<span id="player2Point">66</span></div>
+                        </div>
+                    </div>
+                    <div class="player3">
+                        <div class="choiceCard"></div>
+                        <div>
+                            <div>player3</div>
+                            <div>持ち点：<span id="player3Point">66</span></div>
+                        </div>
+                    </div>
+                    <div class="player4">
+                        <div class="choiceCard"></div>
+                        <div>
+                            <div>player4</div>
+                            <div>持ち点：<span id="player4Point">66</span></div>
+                        </div>
+                    </div>
+                    <div class="player5">
+                        <div class="choiceCard"></div>
+                        <div>
+                            <div>player5</div>
+                            <div>持ち点：<span id="player5Point">66</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- フィールド全体 -->
+        </main>
+        <!-- ============================ -->
+        <footer>
+            <small>© 2025 Ryo Miyashita portfolio</small>
+        </footer>
+    </div>
+    <div id="modal" class="modal">
+        <button type="button" class="modalClose">閉じる</button>
+        <section id="result" class="result">
+            <h2>順位</h2>
+            <ol id="ranking" class="ranking">
+            </ol>
+        </section>
+    </div>
+    <div class="ruleOverlay ruleClose">
+        <div id="rule" class="rule">
+            <dl>
+                <button type="button" class="ruleClose">閉じる</button>
+                <dt>【概要】</dt>
+                <dd>
+                    「ニムト」という名前の有名なボードゲームを再現したものです。<br>
+                    ※サイトの作成者が考案したものではありません。<br>
+                    ※ポートフォリオとして作成したものなので公開は限定的なものとします。<br>
+                    実際に販売もされており、通販サイトなどでも購入できます。<br>
+                    「ボードゲームアリーナ」というオンラインのボードゲームサイトで無料で遊ぶことも可能なので興味を持った方は是非そちらで遊んでください。
+                </dd>
+                <br>
+                <dt>【プレイ人数】</dt><dd>5人固定　※本来は2～10人まで遊べます。推奨は5人</dd>
+                <dt>【プレイ時間】</dt><dd>5分～20分　※対人の場合10分～30分</dd>
+                <dt>【どんなゲーム？】</dt><dd>カードを一斉に出し、小さい順に並べた時に、列の6枚目を踏まないように立ち回るボードゲームです</dd>
+                <br>
+                <dt>【使用カード】</dt><dd>1～104の数字カード　各1枚　内54枚をランダムで使用</dd>
+                <dt>【カードの見方】</dt><dd>中心：数字の大きさ　右上：獲得した時の失点　色：失点の大きさを表している</dd>
+                <dt>【勝利条件】</dt><dd>ゲーム終了時、持ち点が一番多い人の勝ち</dd>
+                <dt>【ゲーム終了条件】</dt><dd>誰かの持ち点が0以下（0含む）になったラウンドの終了時点で終了</dd>
+                <br>
+                <dt>【ゲームの流れ】</dt>
+                <dd>
+                    1：山札から1人10枚ずつ手札を配り、その後4枚を初期場札として公開する<br>
+                    2：手札の中から1枚選び、裏にして場に出す<br>
+                    3：全員が場に出したら一斉に表にし、数字が小さい順にカードを列に並べる<br>
+                    ※<em>列の6枚目にカードが置かれた時</em>、6枚目にカードを置いた人は1～5枚目のカードを回収し、<br>
+                    そのカードに書かれた右上の数字の分だけ<em>失点</em>します<br>
+                    6枚目に置かれたカードはその列の先頭になります
+                    4：手札が全てなくなるまで2～3を繰り返す<br>
+                    5：持ち点が0以下の人がいなければ次のラウンドに移行、1～5を繰り返す<br>
+                    6：持ち点が0以下の人が出たらラウンドの終了までプレイし、持ち点の多い人が勝ち
+                </dd>
+                <br>
+                <dt>【カード配置のルール】</dt>
+                <dd>
+                    場には4列のカード置き場があります。<br>
+                    列は左詰めで数字が「小さい⇒大きい」の順で並んでいきます。<br>
+                    <br>
+                    1：出したカード」が列の「最後尾のカード」のどれかより数字が<em>大きい</em>場合<br>
+                    ・出したカードより「数字が小さい」最後尾のカードがある列で<br>
+                    ・最後尾のカードと「一番数字が近い」カードがある列の最後尾に置かれます。<br>
+                    ・6枚目に配置された場合は1～5枚目のカードを回収し、失点します（右上の数字の合計点）
+                    <br>
+                    2：「出したカード」が列の「最後尾のカード」のどれよりも数字が<em>小さい</em>場合<br>
+                    ・任意の列を選択しそこに置かれているカードを回収し、失点します。<br>
+                    ・出したカードは回収した列の先頭に置かれます。
+                </dd>
+            </dl>
+        </div>
+    </div>
+<!-- ============================ -->
+<script src="script.js"></script>
+</body>
+</html>
