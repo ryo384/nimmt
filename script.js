@@ -1,5 +1,23 @@
 'use strict';
 
+window.addEventListener('load', function() {
+    const password = prompt("パスワードを入力してください。\nパスワードはポートフォリオサイトのこのページのリンク下にあります。\n※既存のゲームのため、ポートフォリオを確認される方以外、利用できないようにしています。");
+
+    // 正しいパスワードを設定
+    const correctPassword = "cca4a";
+
+    if (password === correctPassword) {
+        alert("認証成功！");
+        // パスワードが合っていたらページを表示
+        document.body.style.display = 'block';
+    } else {
+        alert("パスワードが違います。");
+        // 間違っていたらページを隠す or 別ページへ移動
+        document.body.innerHTML = "<h2>ポートフォリオページから正しいパスワードを確認してください</h2>";
+    }
+});
+
+
 // 必要な宣言====================
 let allCard = []; //全カードが入った配列
 let dealArray; //カード配る用 createCard()の後にコピーしたものを代入
